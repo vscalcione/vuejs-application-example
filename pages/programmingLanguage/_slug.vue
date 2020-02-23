@@ -4,12 +4,12 @@
       <div class="columns">
         <div class="column is-6">
           <div class="image is-2by2">
-            <img  :src="product.imageUrl">
+            <img  :src="programmingLanguage.imageUrl">
           </div>
         </div>
         <div class="column is-5 is-offset-1">
-          <div class="title is-2">{{ product.name }}</div>
-          <p class="title is-3 has-text-muted">€ {{ product.price }}</p>
+          <div class="title is-2"> {{ programmingLanguage.name }} </div>
+          <p class="title is-3 has-text-muted"> {{ programmingLanguage.basedLanguage }} </p>
           <hr>
           <br>
           <p class="">
@@ -23,8 +23,7 @@
             &nbsp; &nbsp;
           </p>
           <br>
-          <p>{{ product.description }}
-          </p>
+          <p> {{ programmingLanguage.description }} </p>
           <br>
           <br>
           <p class="">
@@ -44,28 +43,28 @@
         </div>
       </div>
     </div>
-          <div class="links">
-        <nuxt-link to="/prodotti"  class="button--green">Torna a prodotti</nuxt-link>
-        <nuxt-link to="/"  class="button--green">Torna alla Home Page</nuxt-link>
-      </div>
+    <div class="links">
+      <nuxt-link to="/programmingLanguages"  class="button--green">Torna ai Linguaggi di Programmazione </nuxt-link>
+      <nuxt-link to="/"  class="button--green">Torna alla Home Page</nuxt-link>
+    </div>
   </div>
 </template>
 
 
 <script>
-import products from '~/static/products-list.json'
+import programmingLanguages from '~/static/programmingLanguages-list.json'
 
 export default {
   asyncData (context) {
     console.log(context.params.slug)
-    console.log(products[context.params.slug])
-    return { slug: context.params.slug, product: products[context.params.slug] }
+    console.log(programmingLanguages[context.params.slug])
+    return { slug: context.params.slug, programmingLanguage: programmingLanguages[context.params.slug] }
   },
   head () {
     return {
-      title: 'Prodotto - ' + this.product.name,
+      title: 'Programming Language - ' + this.programmingLanguage.name,
       meta: [
-        { hid: 'description', name: 'description', content: 'DEscrizione prodotto' }
+        { hid: 'description', name: 'description', content: 'Descrizione linguaggio di programmazione' }
       ]
     }
   }
@@ -94,10 +93,9 @@ body {
 .cart-icon {
   padding-top:10px;
 }
-.product-header {
+.framework-header {
   background-color:#fafafa;
 }
-
 
 .links
 {

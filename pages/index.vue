@@ -9,7 +9,8 @@
         Esempio di progetto Web costruito con Nuxt.js
       </h2>
       <div class="links">
-        <nuxt-link to="/prodotti"  class="button--green">Prodotti</nuxt-link>
+        <nuxt-link to="/frameworks"  class="button--green">Frameworks</nuxt-link>
+        <nuxt-link to="/programmingLanguages" class="button--green">Programming Languages</nuxt-link>
       </div>
     </div>
   </section>
